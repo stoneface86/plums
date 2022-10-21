@@ -1,0 +1,26 @@
+
+@use 'plums'
+@use 'sass:map'
+
+$-colormap: ('pal0': plums.$colors-pal0, 'pal1': plums.$colors-pal1, 'pal2': plums.$colors-pal2, 'pal3': plums.$colors-pal3, 'shadow': plums.$colors-shadow)
+
+body
+  background-color: plums.$colors-pal3
+
+#container
+  width: 100%
+  min-height: 100vh
+  max-width: 960px
+  margin: 0 auto
+  padding: 3rem
+
+  background-color: white
+
+.td-color
+  width: 128px
+  text-align: center
+  vertical-align: middle
+
+@each $key, $color in $-colormap
+  #td-color-#{$key}
+    background-color: $color

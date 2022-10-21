@@ -1,0 +1,20 @@
+
+@use '../colors'
+
+$padding: 8px
+$padding-content: $padding
+
+.gbox
+  box-sizing: border-box
+  border-left: 4px solid colors.$pal0
+  padding: $padding
+  width: 100%
+
+  &:hover 
+    border-left-color: colors.$pal1
+  
+  &__title
+    color: colors.$pal1
+
+  &__content
+    padding: $padding-content

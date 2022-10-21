@@ -1,0 +1,98 @@
+---
+permalink: '/'
+codeExamples:
+  - <p>Paragraph</p>
+  - <strong>strong</strong>
+  - <em>emphasis</em>
+  - <u>underline</u>
+  - <a href="#">link</a>
+  - <h1>Heading</h1>
+  - <h2>Heading</h2>
+  - <h3>Heading</h3>
+  - <h4>Heading</h4>
+  - <h5>Heading</h5>
+  - <h6>Heading</h6>
+  - |
+    <!-- Group boxes -->
+    <div class="gbox">
+      <div class="gbox__title">
+        title
+      </div>
+      <div class="gbox__content">
+        content
+      </div>
+    </div>
+  - |
+    <!-- Buttons -->
+    <a class="btn" href="#">Button</a>
+    <a class="btn btn--filled" href="#">Button</a>
+  - <code>var foo = "123";</code>
+  - |
+    <pre><code>let fp = open("test.txt", fmRead)
+    defer: fp.close()
+    </code></pre>
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&family=Fira+Code">
+    <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
+  </head>
+  <body>
+    <section id="container">
+      <h1>plums Demo</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Item / Element</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Colors</td>
+            <td>
+              <p>
+                This stylesheet provides four primary colors, in the form of a palette
+                (pal). The <code>colors</code> module provide the variables for each color.
+        
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Variable</th>
+                      <th>Color</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for color in ['pal0', 'pal1', 'pal2', 'pal3', 'shadow'] %}
+                    <tr>
+                      <td><code>plums.$colors-{{color}}</code></td>
+                      <td class="td-color" id="td-color-{{color}}"></td>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </p>
+          </td>
+        </tr>
+          {% for example in codeExamples %}
+            {%- set hasPre = '\n' in example -%}
+            <tr>
+              <td>
+                {%- if hasPre -%}
+                  <pre>
+                {%- endif -%}
+                <code>{{ example | forceescape }}</code>
+                {%- if hasPre -%}
+                  </pre>
+                {%- endif -%}
+              </td>
+              <td>
+                {{- example | safe -}}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+  </body>
+</html>
