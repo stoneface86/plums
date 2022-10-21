@@ -2,14 +2,17 @@
   "name": "plums",
   "version": "1.0.0",
   "description": "sass library used for Trackerboy",
-  "main": "index.js",
+  "files": [
+    "LICENSE",
+    "src"
+  ],
   "scripts": {
     "watch:sass": "sass --watch -I src demo/style.sass _site/css/style.css",
     "build:sass": "sass  -I src demo/style.sass _site/css/style.css",
     "watch:eleventy": "eleventy --serve",
     "build:eleventy": "eleventy",
-    "start": "npm-run-all build:sass --parallel watch:*",
-    "build": "npm-run-all build:*"
+    "demo:start": "npm-run-all build:sass --parallel watch:*",
+    "demo:build": "npm-run-all build:*"
   },
   "repository": {
     "type": "git",
