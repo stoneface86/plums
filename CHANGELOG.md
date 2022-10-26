@@ -1,6 +1,11 @@
 
 # CHANGELOG
 
+## [1.2.0] - 2022-10-26
+
+### Added
+ - Base styles for `ul`, `ol` and `li` elements.
+
 ## [1.1.0] - 2022-10-24
 
 ### Added
