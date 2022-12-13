@@ -91,11 +91,11 @@ img
 
 code 
   margin: 0 .2rem
-  border: 1px solid colors.$pal1
+  border: 1px solid colors.$pal0
   border-radius: 2px
   padding: .2rem .5rem
   
-  background-color: colors.$pal0
+  background-color: #f1f1f1
   font-family: $code-font-family
   font-size: 90%
   white-space: nowrap
@@ -112,6 +112,7 @@ pre > code
 // Tables
 
 table 
+  margin-bottom: 2rem
   width: 100%
   
   table-layout: auto
@@ -128,3 +129,17 @@ th, td
 
   &:last-child
     padding-right: 0
+
+// kbd
+kbd
+  display: inline-block
+  $borderStyle: solid colors.$pal1
+  border-left:  1px $borderStyle
+  border-right: 1px $borderStyle
+  border-top:   1px $borderStyle
+  border-bottom: 3px $borderStyle
+  border-radius: 0.5rem
+  margin: 0 0.2rem
+  padding: 0.25rem 0.5rem
+
+  white-space: nowrap

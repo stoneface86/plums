@@ -1,6 +1,15 @@
 
 # CHANGELOG
 
+## [1.3.0] - 2022-12-12
+
+### Added
+ - Base style for `kbd` elements
+
+### Changed
+ - `table` elements now have a `margin-bottom` of `2rem`
+ - background and border colors for `code` elements
+
 ## [1.2.0] - 2022-10-26
 
 ### Added
